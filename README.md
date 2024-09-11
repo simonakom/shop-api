@@ -3,7 +3,7 @@
 
 ## Welcome!
 
-This application is built using Express and Node.js. It provides CRUD API for managing shops and shops items. All data is stored in memory, meaning it will be lost when the application restarts.
+This application is built using Express and Node.js. It provides CRUD API for managing shops and shops items. All data is stored in memory, meaning it will be lost when the application restarts
  
 ## Task
 
