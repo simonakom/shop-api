@@ -30,56 +30,13 @@ Before you begin, ensure you have the following installed on your machine:
 - Install Express by running `npm install express`
 - Run the API Server Locally `node app.js`. You should see a message: `Server is running on http://localhost:3000`
 
-## Test Scenarios in Postman
+## Tests
 
-### shop
+Test scenarios are available in `test.txt`, or you can run them using Postman.
 
-- [x] Create Shop:
-- Method: POST
-- URL: http://localhost:3000/shops
-- Body (JSON): { "name": "Shop 1" }
+### Importing Postman Collection
 
-- [x] Update Shop:
-- Method: PUT
-- URL: http://localhost:3000/shops/`id`
-- Body (JSON): { "name": "Updated Shop 1" }
-
-- [x] Get All Shops:
-- Method: GET
-- URL: http://localhost:3000/shops
-
-- [x] Get Shop by ID:
-- Method: GET
-- URL: http://localhost:3000/shops/`id`
-
-- [x] Delete Shop:
-- Method: DELETE
-- URL: http://localhost:3000/shops/`id`
-
-### shop items
-
-- [x] Create Shop Item:
-- Method: POST
-- URL: http://localhost:3000/shopItems
-- Body (JSON): { "name": "Item 1", "price": 10, "shopId": 1 }
-
-- [x] Update Shop Item:
-- Method: PUT
-- URL: http://localhost:3000/shopItems/`id`
-- Body (JSON): { "name": "Updated Item 1", "price": 15 }
-
-- [x] Get All Shop Items
-- Method: GET
-- URL: http://localhost:3000/shopItems
-
-- [x] Get Shop Item by ID
-- Method: GET
-- URL: http://localhost:3000/shopItems/`id`
-
-- [x] Prevent Deleting Shop with Items:
-- Method: DELETE
-- URL: http://localhost:3000/shops/`id`
-
-
-
+- From this repository download `movie-actor-api.postman_collection.json` file to your local machine.
+- In Postman, click on the "Import" button located at the top left and drop `movie-actor-api.postman_collection.json` file.
+- Postman will automatically add the collection, and you will see all predefined API requests.
 

@@ -1,0 +1,129 @@
+
+Test Scenarios in Postman
+
+--------------------------- Test Cases for Shop Management -----------------------------
+
+→ Create a new shop:
+ Method: POST
+ URL: http://localhost:3000/shops
+ Body: 
+        {
+              "name": "Shop 1"
+        }
+ Expected Response: 201 Created + body
+
+→ Create shop without a name (validation failure):
+ Method: POST
+ URL: http://localhost:3000/shops
+ Body: 
+        {
+            
+        }
+ Expected Response: 400 Bad Request + message
+
+→ Get all shops:
+ Method: GET
+ URL: http://localhost:3000/shops
+ Expected Response: 200 OK + body
+
+→ Get a shop by ID:
+ Method: GET
+ URL: http://localhost:3000/shops/1 (Replace 1 with a valid shop ID)
+ Expected Response: 200 OK + body
+
+→  Invalid shop ID (not found):
+ Method: GET
+ URL: http://localhost:3000/shops/9999
+ Expected Response: 404 Not Found + message
+
+→ Update a shop:
+ Method: PUT
+ URL: http://localhost:3000/shops/1 (Replace 1 with a valid shop ID)
+ Body: 
+        {
+               "name": "Updated Shop Name"
+        }
+ Expected Response: 200 OK + body
+
+→ Update non-existent shop (not found):
+ Method: PUT
+ URL: http://localhost:3000/shops/9999
+ Body: 
+        {
+              "name": "Non-existent Shop"
+        }
+ Expected Response: 404 Not Found + message
+
+→ Delete a shop:
+ Method: DELETE
+ URL: http://localhost:3000/shops/1 (Replace 1 with a valid shop ID)
+ Expected Response: 200 OK + body
+
+→ Delete shop with items (failure):
+ Method: DELETE
+ URL: http://localhost:3000/shops/2 (Ensure this shop has items)
+Expected Response: 400 Bad Request + message
+
+→ Delete non-existent shop:
+ Method: DELETE
+ URL: http://localhost:3000/shops/9999
+ Expected Response: 404 Not Found + message
+
+--------------------------- Test Cases for Shop items Management -----------------------------
+
+→ Successfully create a shop item:
+ Method: POST
+ URL: http://localhost:3000/shopItems
+ Body: 
+       {
+              "name": "Item 1",
+              "price": 9.99,
+              "shopId": 1
+       }
+ Expected Response: 201 Created + body
+
+→ Create shop item for a non-existent shop:
+ Method: POST
+ URL: http://localhost:3000/shopItems
+ Body: 
+       {
+              "name": "Item 2",
+              "price": 15.99,
+              "shopId": 9999
+       }
+ Expected Response: 404 Not Found + message
+
+→ Get all shop items:
+ Method: GET
+ URL: http://localhost:3000/shopItems
+ Expected Response: 200 OK + body
+
+→ Get a shop item by ID:
+ Method: GET
+ URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid shop ID)
+ Expected Response: 200 OK + body
+
+→  Invalid shop item ID (not found):
+ Method: GET
+ URL: http://localhost:3000/shopItems/9999
+ Expected Response: 404 Not Found + message
+
+→ Successfully update a shop item:
+ Method: PUT
+ URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid shop ID)
+ Body: 
+        {
+               "name": "Updated Shop item name"
+               "price": 15.99,
+        }
+ Expected Response: 200 OK + body
+
+→ Update non-existent shop item:
+ Method: PUT
+ URL: http://localhost:3000/shopItems/9999
+ Body: 
+       {
+              "name": "Non-existent Item",
+              "price": 10.99
+       }
+ Expected Response: 404 Not Found + message

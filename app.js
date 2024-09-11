@@ -11,6 +11,12 @@ let shopItemIdCounter = 1;
 // Create a new shop
 app.post('/shops', (req, res) => {
   const { name } = req.body;
+
+    // Check if the name field is provided
+    if (!name || name.trim() === "") {
+      return res.status(400).json({ error: 'Shop name is required' });
+    }
+    
   const newShop = { id: shopIdCounter++, name, items: [] };
   shops.push(newShop);
   res.status(201).json(newShop);
