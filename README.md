@@ -26,8 +26,7 @@ Before you begin, ensure you have the following installed on your machine:
 
 - Clone this repository to your local machine
 - Navigate to the project directory
-- Initialize a new Node.js project by running `npm init -y` in your terminal. This will create a package.json file.
-- Install Express by running `npm install express`
+- Run the following command to install all the required modules listed in the package.json file: `npm install` 
 - Run the API Server Locally `node app.js`. You should see a message: `Server is running on http://localhost:3000`
 
 ## Tests

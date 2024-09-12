@@ -111,7 +111,7 @@ Expected Response: 400 Bad Request + message
  URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid item ID)
  Body: 
         {
-               "name": "updated item name",
+               "name": "Updated item name",
                "price": 90.99
         }
  Expected Response: 200 OK + body
