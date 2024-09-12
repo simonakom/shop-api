@@ -1,6 +1,4 @@
 
-Test Scenarios in Postman
-
 --------------------------- Test Cases for Shop Management -----------------------------
 
 → Create a new shop:
@@ -8,7 +6,7 @@ Test Scenarios in Postman
  URL: http://localhost:3000/shops
  Body: 
         {
-              "name": "Shop 1"
+              "name": "Shop name"
         }
  Expected Response: 201 Created + body
 
@@ -31,7 +29,7 @@ Test Scenarios in Postman
  URL: http://localhost:3000/shops/1 (Replace 1 with a valid shop ID)
  Expected Response: 200 OK + body
 
-→  Invalid shop ID (not found):
+→ Invalid shop ID (not found):
  Method: GET
  URL: http://localhost:3000/shops/9999
  Expected Response: 404 Not Found + message
@@ -41,7 +39,7 @@ Test Scenarios in Postman
  URL: http://localhost:3000/shops/1 (Replace 1 with a valid shop ID)
  Body: 
         {
-               "name": "Updated Shop Name"
+               "name": "Updated shop name"
         }
  Expected Response: 200 OK + body
 
@@ -61,7 +59,7 @@ Test Scenarios in Postman
 
 → Delete shop with items (failure):
  Method: DELETE
- URL: http://localhost:3000/shops/2 (Ensure this shop has items)
+ URL: http://localhost:3000/shops/1 (Ensure this shop has items)
 Expected Response: 400 Bad Request + message
 
 → Delete non-existent shop:
@@ -76,9 +74,9 @@ Expected Response: 400 Bad Request + message
  URL: http://localhost:3000/shopItems
  Body: 
        {
-              "name": "Item 1",
-              "price": 9.99,
-              "shopId": 1
+              "name": "Item name",
+              "price": 100.99,
+              "shopId": 1 (Ensure this shop exists)
        }
  Expected Response: 201 Created + body
 
@@ -87,7 +85,7 @@ Expected Response: 400 Bad Request + message
  URL: http://localhost:3000/shopItems
  Body: 
        {
-              "name": "Item 2",
+              "name": "Item for non-existent shop",
               "price": 15.99,
               "shopId": 9999
        }
@@ -100,7 +98,7 @@ Expected Response: 400 Bad Request + message
 
 → Get a shop item by ID:
  Method: GET
- URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid shop ID)
+ URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid item ID)
  Expected Response: 200 OK + body
 
 →  Invalid shop item ID (not found):
@@ -110,11 +108,11 @@ Expected Response: 400 Bad Request + message
 
 → Successfully update a shop item:
  Method: PUT
- URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid shop ID)
+ URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid item ID)
  Body: 
         {
-               "name": "Updated Shop item name"
-               "price": 15.99,
+               "name": "updated item name",
+               "price": 90.99
         }
  Expected Response: 200 OK + body
 
