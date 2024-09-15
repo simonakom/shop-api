@@ -57,7 +57,7 @@ Expected Response: 400 Bad Request + message
  URL: http://localhost:3000/shops/9999
  Body: 
         {
-              "name": "Non-existent Shop"
+              "name": "Non-existent shop"
         }
  Expected Response: 404 Not Found + message
 
@@ -199,7 +199,7 @@ Expected Response: 400 Bad Request + message
  URL: http://localhost:3000/shopItems/9999
  Body: 
        {
-              "name": "Non-existent Item",
+              "name": "Non-existent item",
               "price": 10.99
        }
  Expected Response: 404 Not Found + message
