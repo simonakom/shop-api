@@ -9,10 +9,10 @@ This application is built using Node.js and Express. It provides CRUD API for ma
 
 Create Postman requests/tests which cover the following scenarios:
 
-- You are able to create, update, delete a shop
-- You are able to assign a shop item to a shop
-- You are able to create, update, delete a shop item
-- You are not able to delete a shop if it has items available
+- You are able to create, update, delete a shop.
+- You are able to assign a shop item to a shop.
+- You are able to create, update, delete a shop item.
+- You are not able to delete a shop if it has items available.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Before you begin, ensure you have the following installed on your machine:
 
 - Clone this repository to your local machine
 - Navigate to the project directory
-- Run the following command to install all the required modules listed in the package.json file: `npm install` 
+- Run the following command to install all the required modules listed in the "package.json" file: `npm install` 
 - Run the API Server Locally `node app.js`. You should see a message: `Server is running on http://localhost:3000`
 
 ## Tests
