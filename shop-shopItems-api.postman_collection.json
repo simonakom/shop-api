@@ -38,7 +38,7 @@
 					"response": []
 				},
 				{
-					"name": "Create shop without a name (validation failure)",
+					"name": "Create shop without a name (failure)",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -210,7 +210,7 @@
 					"response": []
 				},
 				{
-					"name": "Invalid shop ID (not found)",
+					"name": "Invalid shop ID (failure)",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -331,7 +331,7 @@
 					"response": []
 				},
 				{
-					"name": "Update non-existent shop (not found)",
+					"name": "Update non-existent shop (failure)",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -500,7 +500,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete non-existent shop",
+					"name": "Delete non-existent shop (failure)",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -631,13 +631,125 @@
 					"response": []
 				},
 				{
-					"name": "Create shop item for a non-existent shop",
+					"name": "Create shop item without a name (failure)",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Item for non-existent shop\",\n  \"price\": 15.99,\n  \"shopId\": 9999\n}",
+							"raw": "{\n  \"price\": 120.50,\n  \"shopId\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shopItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shopItems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create shop item without price (failure)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Adidas\",\n  \"shopId\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shopItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shopItems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create shop item with a negative price (failure)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Puma\",\n  \"price\": -15.99,\n  \"shopId\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shopItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shopItems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create shop item without a shop ID (failure)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Item\",\n  \"price\": 120.50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shopItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shopItems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create shop item for a non-existent shop (failure)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"Item for non-existent shop\",\n        \"price\": 15.99,\n        \"shopId\": 9999\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -844,7 +956,7 @@
 					"response": []
 				},
 				{
-					"name": "Invalid shop item ID (not found)",
+					"name": "Invalid shop item ID (failure)",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1067,7 +1179,7 @@
 					"response": []
 				},
 				{
-					"name": "Update non-existent shop item",
+					"name": "Update non-existent shop item (failure)",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -1240,7 +1352,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete non-existent shop",
+					"name": "Delete non-existent shop item (failure)",
 					"request": {
 						"method": "DELETE",
 						"header": [],

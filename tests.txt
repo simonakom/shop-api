@@ -80,7 +80,48 @@ Expected Response: 400 Bad Request + message
        }
  Expected Response: 201 Created + body
 
-→ Create shop item for a non-existent shop:
+ → Create shop item without a name (failure):
+ Method: POST
+ URL: http://localhost:3000/shopItems
+ Body: 
+        {
+            "price": 120.50,
+            "shopId": 1 
+        }
+ Expected Response: 400 Bad Request + message
+
+ → Create shop item without a price (failure):
+ Method: POST
+ URL: http://localhost:3000/shopItems
+ Body: 
+        {
+              "name": "Item name",
+              "shopId": 1 
+        }
+ Expected Response: 400 Bad Request + message
+
+ → Create shop item with a negative price (failure):
+ Method: POST
+ URL: http://localhost:3000/shopItems
+ Body: 
+        {
+              "name": "Item name",
+              "price": -120.50,
+              "shopId": 1 
+        }
+ Expected Response: 400 Bad Request + message
+
+ → Create shop item without a shop ID (failure):
+ Method: POST
+ URL: http://localhost:3000/shopItems
+ Body: 
+        {
+              "name": "Item name",
+              "price": 120.50
+        }
+ Expected Response: 400 Bad Request + message
+
+→ Create shop item for a non-existent shop (failure):
  Method: POST
  URL: http://localhost:3000/shopItems
  Body: 
@@ -101,7 +142,7 @@ Expected Response: 400 Bad Request + message
  URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid item ID)
  Expected Response: 200 OK + body
 
-→  Invalid shop item ID (not found):
+→  Invalid shop item ID (failure):
  Method: GET
  URL: http://localhost:3000/shopItems/9999
  Expected Response: 404 Not Found + message
@@ -116,7 +157,7 @@ Expected Response: 400 Bad Request + message
         }
  Expected Response: 200 OK + body
 
-→ Update non-existent shop item:
+→ Update non-existent shop item (failure):
  Method: PUT
  URL: http://localhost:3000/shopItems/9999
  Body: 
@@ -131,7 +172,7 @@ Expected Response: 400 Bad Request + message
  URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid shop ID)
  Expected Response: 200 OK + bodys
 
- → Delete a non-existent shop item:
+ → Delete a non-existent shop item (validation failure):
  Method: DELETE
  URL: http://localhost:3000/shopItems/9999
  Expected Response: 404 Not Found + message

@@ -73,15 +73,34 @@ app.delete('/shops/:id', (req, res) => {
 // Create a new shop item and assign it to a shop
 app.post('/shopItems', (req, res) => {
   const { name, price, shopId } = req.body;
+
+  // Validate the 'name' field
+  if (!name || name.trim() === "") {
+    return res.status(400).json({ error: 'Item name is required' });
+  }
+
+ // Validate the 'price' field
+ if (typeof price === 'undefined' || price === null || isNaN(price) || price <= 0) {
+  return res.status(400).json({ error: 'A valid positive item price is required' });
+}
+
+  // Validate the 'shopId' field
+  if (!shopId || isNaN(shopId)) {
+    return res.status(400).json({ error: 'Valid shop ID is required' });
+  }
+
   const shop = shops.find(s => s.id == shopId);
 
+  // Check if the shop exists
   if (!shop) {
     return res.status(404).json({ error: 'Shop not found' });
   }
 
+  // Create new shop item
   const newShopItem = { id: shopItemIdCounter++, name, price };
   shopItems.push(newShopItem);
   shop.items.push(newShopItem);
+
   res.status(201).json(newShopItem);
 });
 
