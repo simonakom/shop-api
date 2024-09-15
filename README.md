@@ -11,7 +11,7 @@ Create Postman requests/tests which cover the following scenarios:
 
 - You are able to create, update, delete a shop
 - You are able to assign a shop item to a shop
-- You are able to create, update, delete a shopItem
+- You are able to create, update, delete a shop item
 - You are not able to delete a shop if it has items available
 
 ## Prerequisites
