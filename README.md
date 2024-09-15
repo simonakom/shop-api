@@ -3,16 +3,15 @@
 
 ## Welcome!
 
-This application is built using Express and Node.js. It provides CRUD API for managing shops and shops items. All data is stored in memory, meaning it will be lost when the application restarts.
+This application is built using Node.js and Express. It provides CRUD API for managing shops and shop items. All data is stored in memory, meaning it will be lost when the application restarts.
  
 ## Task
 
 Create Postman requests/tests which cover the following scenarios:
 
-- You are able to create and update a shop
-- You are able to create and delete a shop
-- You are able to assign a shopItem to a shop
-- You are able to rename a shopItem
+- You are able to create, update, delete a shop
+- You are able to assign a shop item to a shop
+- You are able to create, update, delete a shopItem
 - You are not able to delete a shop if it has items available
 
 ## Prerequisites

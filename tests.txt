@@ -125,3 +125,13 @@ Expected Response: 400 Bad Request + message
               "price": 10.99
        }
  Expected Response: 404 Not Found + message
+
+ → Delete a shop item:
+ Method: DELETE
+ URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid shop ID)
+ Expected Response: 200 OK + bodys
+
+ → Delete a non-existent shop item:
+ Method: DELETE
+ URL: http://localhost:3000/shopItems/9999
+ Expected Response: 404 Not Found + message

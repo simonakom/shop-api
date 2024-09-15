@@ -100,7 +100,6 @@ app.put('/shopItems/:id', (req, res) => {
   res.json(shopItem);
 });
 
-
 // Get all shop items
 app.get('/shopItems', (req, res) => {
   res.json(shopItems);
@@ -116,6 +115,29 @@ app.get('/shopItems/:id', (req, res) => {
   }
 
   res.json(shopItem);
+});
+
+// Delete a shop item
+app.delete('/shopItems/:id', (req, res) => {
+  const { id } = req.params;
+  const shopItemIndex = shopItems.findIndex(i => i.id == id);
+
+  if (shopItemIndex === -1) {
+    return res.status(404).json({ error: 'Shop item not found' });
+  }
+
+  const shopItem = shopItems[shopItemIndex];
+  const shop = shops.find(s => s.items.includes(shopItem));
+
+  if (shop) {
+    const shopItemIndexInShop = shop.items.findIndex(i => i.id == id);
+    if (shopItemIndexInShop !== -1) {
+      shop.items.splice(shopItemIndexInShop, 1);
+    }
+  }
+
+  shopItems.splice(shopItemIndex, 1);
+  res.status(200).json({ message: 'Shop item deleted successfully' });
 });
 
 const PORT = 3000;
