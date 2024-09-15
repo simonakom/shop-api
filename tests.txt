@@ -10,7 +10,7 @@
         }
  Expected Response: 201 Created + body
 
-→ Create shop without a name (validation failure):
+→ Create shop without a name (failure):
  Method: POST
  URL: http://localhost:3000/shops
  Body: 
@@ -29,9 +29,9 @@
  URL: http://localhost:3000/shops/1 (Replace 1 with a valid shop ID)
  Expected Response: 200 OK + body
 
-→ Invalid shop ID (not found):
+→ Get a shop by invalid shop ID (failure):
  Method: GET
- URL: http://localhost:3000/shops/9999
+ URL: http://localhost:3000/shops/9999 
  Expected Response: 404 Not Found + message
 
 → Update a shop:
@@ -43,7 +43,16 @@
         }
  Expected Response: 200 OK + body
 
-→ Update non-existent shop (not found):
+ → Update a shop without a name (failure):
+ Method: PUT
+ URL: http://localhost:3000/shops/1 (Replace 1 with a valid shop ID)
+ Body: 
+        {
+               
+        }
+Expected Response: 400 Bad Request + message
+
+→ Update non-existent shop (failure):
  Method: PUT
  URL: http://localhost:3000/shops/9999
  Body: 
@@ -62,7 +71,7 @@
  URL: http://localhost:3000/shops/1 (Ensure this shop has items)
 Expected Response: 400 Bad Request + message
 
-→ Delete non-existent shop:
+→ Delete non-existent shop (failure):
  Method: DELETE
  URL: http://localhost:3000/shops/9999
  Expected Response: 404 Not Found + message
@@ -86,7 +95,7 @@ Expected Response: 400 Bad Request + message
  Body: 
         {
             "price": 120.50,
-            "shopId": 1 
+            "shopId": 1 (Ensure this shop exists)
         }
  Expected Response: 400 Bad Request + message
 
@@ -96,7 +105,7 @@ Expected Response: 400 Bad Request + message
  Body: 
         {
               "name": "Item name",
-              "shopId": 1 
+              "shopId": 1 (Ensure this shop exists)
         }
  Expected Response: 400 Bad Request + message
 
@@ -107,7 +116,7 @@ Expected Response: 400 Bad Request + message
         {
               "name": "Item name",
               "price": -120.50,
-              "shopId": 1 
+              "shopId": 1 (Ensure this shop exists)
         }
  Expected Response: 400 Bad Request + message
 
@@ -157,6 +166,34 @@ Expected Response: 400 Bad Request + message
         }
  Expected Response: 200 OK + body
 
+ →  Update a shop item without a name (failure):
+ Method: PUT
+ URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid item ID)
+ Body: 
+        {
+               "price": 190.99
+        }
+ Expected Response: 400 Bad Request + message
+
+ →  Update a shop item without a price (failure):
+ Method: PUT
+ URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid item ID)
+ Body: 
+        {
+               "name": "Updated item name"
+        }
+ Expected Response: 400 Bad Request + message
+
+  →  Update a shop item with a negative price (failure):
+ Method: PUT
+ URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid item ID)
+ Body: 
+       {
+              "name": "Updated item name",
+              "price": -10.99
+       }
+ Expected Response: 400 Bad Request + message
+
 → Update non-existent shop item (failure):
  Method: PUT
  URL: http://localhost:3000/shopItems/9999
@@ -172,7 +209,7 @@ Expected Response: 400 Bad Request + message
  URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid shop ID)
  Expected Response: 200 OK + bodys
 
- → Delete a non-existent shop item (validation failure):
+ → Delete a non-existent shop item (failure):
  Method: DELETE
  URL: http://localhost:3000/shopItems/9999
  Expected Response: 404 Not Found + message
