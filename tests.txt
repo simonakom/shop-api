@@ -29,7 +29,7 @@
  URL: http://localhost:3000/shops/1 (Replace 1 with a valid shop ID)
  Expected Response: 200 OK + body
 
-→ Get a shop by invalid shop ID (failure):
+→ Get a shop by non-existent shop ID (failure):
  Method: GET
  URL: http://localhost:3000/shops/9999 
  Expected Response: 404 Not Found + message
@@ -151,7 +151,7 @@ Expected Response: 400 Bad Request + message
  URL: http://localhost:3000/shopItems/1 (Replace 1 with a valid item ID)
  Expected Response: 200 OK + body
 
-→  Invalid shop item ID (failure):
+→  Get shop item by non-existent ID (failure):
  Method: GET
  URL: http://localhost:3000/shopItems/9999
  Expected Response: 404 Not Found + message
