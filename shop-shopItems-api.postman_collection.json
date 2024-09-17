@@ -11,6 +11,18 @@
 			"item": [
 				{
 					"name": "Successful shop creation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -289,7 +301,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Flower shop\"\n}",
+							"raw": "{\n    \"name\": \"Flower shop\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -367,7 +379,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Non-existent Shop\"\n}",
+							"raw": "{\n    \"name\": \"Non-existent Shop\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -508,7 +520,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Rose\",\n  \"price\": 5.99,\n  \"shopId\": 4\n}",
+							"raw": "{\n    \"name\": \"Rose\",\n    \"price\": 5.99,\n    \"shopId\": 4\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -662,13 +674,32 @@
 					"response": []
 				},
 				{
+					"name": "Get all shops",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/shops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create shop item",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Nike\",\n  \"price\": 100.99,\n  \"shopId\": 6\n}",
+							"raw": "{\n    \"name\": \"Nike\",\n    \"price\": 100.99,\n    \"shopId\": 6\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -728,7 +759,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"price\": 120.50,\n  \"shopId\": 6\n}",
+							"raw": "{\n    \"price\": 120.50,\n    \"shopId\": 6\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -756,7 +787,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Adidas\",\n  \"shopId\": 6\n}",
+							"raw": "{\n    \"name\": \"Adidas\",\n    \"shopId\": 6\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -784,7 +815,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Puma\",\n  \"price\": -15.99,\n  \"shopId\": 6\n}",
+							"raw": "{\n    \"name\": \"Puma\",\n    \"price\": -15.99,\n    \"shopId\": 6\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -812,7 +843,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Item\",\n  \"price\": 120.50\n}",
+							"raw": "{\n    \"name\": \"Item\",\n    \"price\": 120.50\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -840,7 +871,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"name\": \"Item for non-existent shop\",\n        \"price\": 15.99,\n        \"shopId\": 9999\n}",
+							"raw": "{\n    \"name\": \"Item for non-existent shop\",\n    \"price\": 15.99,\n    \"shopId\": 9999\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -887,25 +918,6 @@
 							"port": "3000",
 							"path": [
 								"shopItems"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get all shops",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/shops",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"shops"
 							]
 						}
 					},
@@ -945,13 +957,32 @@
 					"response": []
 				},
 				{
+					"name": "Get all shops",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/shops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create shop item",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Specialized\",\n  \"price\": 500.90,\n  \"shopId\": 7\n}",
+							"raw": "{\n    \"name\": \"Specialized\",\n    \"price\": 500.90,\n    \"shopId\": 7\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -998,25 +1029,6 @@
 							"port": "3000",
 							"path": [
 								"shopItems"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get all shops",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/shops",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"shops"
 							]
 						}
 					},
@@ -1062,7 +1074,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Macbook\",\n  \"price\": 999.99,\n  \"shopId\": 8\n}",
+							"raw": "{\n    \"name\": \"Macbook\",\n    \"price\": 999.99,\n    \"shopId\": 8\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1237,7 +1249,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"YSL\",\n  \"price\": 89.99,\n  \"shopId\": 9\n}",
+							"raw": "{\n    \"name\": \"YSL\",\n    \"price\": 89.99,\n    \"shopId\": 9\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1297,7 +1309,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Yves Saint Laurent\",\n  \"price\": 90.99\n}",
+							"raw": "{\n    \"name\": \"Yves Saint Laurent\",\n    \"price\": 90.99\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1358,7 +1370,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"price\": 190.99\n}",
+							"raw": "{\n    \"price\": 190.99\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1387,7 +1399,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Yves Saint Laurent updated\"\n}",
+							"raw": "{\n    \"name\": \"Yves Saint Laurent updated\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1416,7 +1428,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Yves Saint Laurent\",\n  \"price\": -90.99\n}",
+							"raw": "{\n    \"name\": \"Yves Saint Laurent\",\n    \"price\": -90.99\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1445,7 +1457,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Non-existent Item\",\n  \"price\": 10.99\n}",
+							"raw": "{\n    \"name\": \"Non-existent Item\",\n    \"price\": 10.99\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1557,7 +1569,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Toy\",\n  \"price\": 40000.99,\n  \"shopId\": 10\n}",
+							"raw": "{\n    \"name\": \"Toy\",\n    \"price\": 40000.99,\n    \"shopId\": 10\n}",
 							"options": {
 								"raw": {
 									"language": "json"
