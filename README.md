@@ -38,4 +38,3 @@ Test scenarios are available in `test.txt`, or you can run them using Postman.
 - In Postman, click on the "Import" button located at the top left and drop `shop-shopItems-api.postman_collection.json` file.
 - Postman will automatically add the collection, and you will see all predefined API requests.
 
-
