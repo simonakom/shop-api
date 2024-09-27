@@ -1,5 +1,5 @@
 
-# CRUD API for shops and their items!
+# CRUD API for shops and their items
 
 ## Welcome!
 
