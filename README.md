@@ -18,8 +18,8 @@ Create Postman requests/tests which cover the following scenarios:
 
 Before you begin, ensure you have the following installed on your machine:
 
-- Node.js: [Download here](https://nodejs.org/)
-- npm (Node Package Manager): Comes with Node.js installation
+- Node.js.
+- npm (Node Package Manager): Comes with Node.js installation.
 
 ## Set up
 
